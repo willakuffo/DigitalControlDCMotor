@@ -22,6 +22,7 @@ volatile long enc_pulses_count = 0;
 uint8_t pwm(uint8_t pin, float duty_cycle, float frequency);
 float square_wave(float *amplitude, float duty_cycle, float frequency);
 void cmd_dc_motor(float voltage, float *min_max_limit);
+void pushBack(float x_new, float *x_array, uint8_t array_size);
 
 
 
