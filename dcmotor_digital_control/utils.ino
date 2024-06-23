@@ -86,6 +86,15 @@ void cmd_dc_motor(float voltage,float *min_max_limit) {
   }
 }
 
+void pushBack(float x_new, float *x_array, uint8_t array_size) {
+  for (uint8_t i = array_size - 1; i > 0; i = i - 1) {
+    x_array[i] = x_array[i - 1];
+  }
+
+  x_array[0] = x_new;
+};
+
+
 void setup_encoder_ISR(uint8_t enc_pinA, uint8_t enc_pinB) {
   attachInterrupt(digitalPinToInterrupt(enc_pinA), CHA_ISR, RISING);
   attachInterrupt(digitalPinToInterrupt(enc_pinB), CHB_ISR, RISING);
